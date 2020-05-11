@@ -31,12 +31,21 @@ def caster_alphabet():
         "x-ray"   : "x",
         "yankee"  : "y",
         "Zulu"    : "z",
+        # Additional mappings
+        "dealt"   : "d",
+        "golf"    : "g",
+        "indy"    : "i",
+        "nova"    : "n",
+        "poppa"   : "p",
+        "qui"     : "q",
+        "rome"    : "r",
+        "seer"    : "s",
+        "uni"     : "u",
+        "yank"    : "y"
     }
-
 
 def get_alphabet_choice(spec):
     return Choice(spec, caster_alphabet())
-
 
 def letters(big, dict1, dict2, letter):
     '''used with alphabet.txt'''
