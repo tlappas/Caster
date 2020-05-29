@@ -32,6 +32,8 @@ def caster_alphabet():
         "yankee"  : "y",
         "Zulu"    : "z",
         # Additional mappings
+        "alpha"   : "a",
+        "Charlie" : "c",
         "dealt"   : "d",
         "golf"    : "g",
         "indy"    : "i",
