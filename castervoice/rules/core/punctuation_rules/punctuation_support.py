@@ -1,10 +1,12 @@
 import dragonfly
 
-
 def double_text_punc_dict():
     return {
-        "quotes":                            "\"\"",
-        "thin quotes":                         "''",
+        # Swap the logic for default quotes
+        # "quotes":                            "\"\"",
+        # "thin quotes":                         "''",
+        "thick quotes":                      "\"\"",
+        "quotes":                              "''",
         "tickris":                             "``",
         "prekris":                             "()",
         "brax":                                "[]",
@@ -12,10 +14,8 @@ def double_text_punc_dict():
         "angle":                               "<>",
     }
 
-
 def _inv_dtpb():
     return {v: k for k, v in double_text_punc_dict().items()}
-
 
 def text_punc_dict():
     # Insurers comma is recognized consistently with DNS/Natlink and
@@ -37,19 +37,31 @@ def text_punc_dict():
         "apostrophe | single quote | chicky":                 "'",
         "left " + _id["()"]:                                  "(",
         "right " + _id["()"]:                                 ")",
+        # Additional Parens keywords
+        "lefty":                                              "(",
+        "righty":                                             ")",
         "starling":                                           "*",
         "plus":                                               "+",
         comma:                                                ",",
         "minus":                                              "-",
+        # Adding another hyphen word. Need to check for some reason dash is
+        #   already responding is a '-'. Not sure if that's a built-in
+        #   Dragon feature.
+        "dash":                                               "-",
         "period | dot":                                       ".",
         "slash":                                              "/",
         "deckle":                                             ":",
         "semper":                                             ";",
-        "[is] less than | left " + _id["<>"]:                 "<",
+        # Less than / greater than
+        "less":                                               "<",
+        "great":                                              ">",
+        # "[is] less than | left " + _id["<>"]:               "<",
+        "left " + _id["<>"]:                                  "<",
         "[is] less [than] [or] equal [to]":                  "<=",
-        "equals":                                             "=",
+        "equals sign":                                        "=",
         "[is] equal to":                                     "==",
-        "[is] greater than | right " + _id["<>"]:             ">",
+        # "[is] greater than | right " + _id["<>"]:           ">",
+        "right " + _id["<>"]:                                 ">",
         "[is] greater [than] [or] equal [to]":               ">=",
         "questo":                                             "?",
         "(atty | at symbol)":                                 "@",
@@ -57,10 +69,22 @@ def text_punc_dict():
         "backslash":                                         "\\",
         "right " + _id["[]"]:                                 "]",
         "carrot":                                             "^",
+        # Easier underscrore"
+        "under":                                              "_",
         "underscore":                                         "_",
         "ticky | ((left | right) " + _id["``"] + " )":        "`",
         "left " + _id["{}"]:                                  "{",
         "pipe (sim | symbol)":                                "|",
         "right " + _id["{}"]:                                 "}",
+        # Individual curls
+        "right curl":                                         "{",
+        "left curl":                                          "}",
         "tilde":                                              "~",
+        # Multi-symbol
+        "dunder | dunderscore":                              "__",
+        "equals":                                           " = ",
+        "less than":                                        " < ",
+        "greater than":                                     " > ",
+        "equality":                                        " == ",
+        "hash":                                              "# "
     }
